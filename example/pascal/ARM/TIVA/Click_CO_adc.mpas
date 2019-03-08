@@ -1,0 +1,28 @@
+unit Click_CO_adc;
+
+uses Click_CO_types;
+
+procedure co_adcInit(); 
+function  co_readADC() :  uint32_t; 
+
+implementation
+
+procedure co_adcInit(); 
+begin
+
+    ADC0_Init(); 
+    ADC_Set_Input_Channel(_ADC_CHANNEL_9); 
+
+end;
+
+function  co_readADC() :  uint32_t; 
+var
+    readADC : uint32_t;
+begin
+
+    readADC := ADC0_Get_Sample(9); 
+    result := readADC; 
+
+end;
+
+end.

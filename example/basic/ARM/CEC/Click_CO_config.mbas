@@ -1,0 +1,5 @@
+module Click_CO_config
+
+include Click_CO_types
+
+end.

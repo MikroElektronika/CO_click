@@ -1,0 +1,27 @@
+unit Click_CO_adc;
+
+uses Click_CO_types;
+
+procedure co_adcInit(); 
+function  co_readADC() :  uint32_t; 
+
+implementation
+
+procedure co_adcInit(); 
+begin
+
+    ADC_Init(); 
+
+end;
+
+function  co_readADC() :  uint32_t; 
+var
+    readADC : uint32_t;
+begin
+
+    readADC := ADC_Read(7); 
+    result := readADC; 
+
+end;
+
+end.

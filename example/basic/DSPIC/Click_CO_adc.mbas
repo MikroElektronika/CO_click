@@ -1,0 +1,25 @@
+module Click_CO_adc
+
+include Click_CO_types
+
+sub procedure co_adcInit() 
+sub function  co_readADC() as uint32_t 
+
+implements
+
+sub procedure co_adcInit() 
+
+    ADC1_Init_Advanced(_ADC_12bit, (_ADC_INTERNAL_VREFL or _ADC_INTERNAL_VREFH)) 
+
+end sub
+
+sub function  co_readADC() as uint32_t 
+dim
+    readADC as uint32_t
+
+    readADC = ADC1_Read(8) 
+    result = readADC 
+
+end sub
+
+end.
